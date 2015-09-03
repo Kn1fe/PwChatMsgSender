@@ -89,7 +89,10 @@ namespace PwChatMsgSender
                 s.Connect(ip);
                 s.Send(Data.ToArray());
                 s.Close();
-            } catch (Exception){ Program.Work = false; }
+            } catch (Exception e){
+                Program.Work = false;
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
